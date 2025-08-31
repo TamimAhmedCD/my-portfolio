@@ -57,7 +57,7 @@ export default function Header() {
 
     return (
         <motion.header
-            className="fixed top-0 right-0 left-0 z-50 transition-all duration-300"
+            className="fixed top-0 right-0 left-0 z-50 transition-all duration-300 font-figtree"
             variants={headerVariants}
             initial="initial"
             animate={isScrolled ? "scrolled" : "animate"}
@@ -72,7 +72,7 @@ export default function Header() {
                 boxShadow: isScrolled ? "0 8px 32px rgba(0, 0, 0, 0.1)" : "none",
             }}
         >
-            <div className="mx-6 lg:mx-8 max-w-7xl px-2 lg:px-4 border rounded-xl lg:rounded-2xl mt-8 font-sans">
+            <div className="mx-6 lg:mx-8 max-w-7xl px-2 lg:px-4 border rounded-xl lg:rounded-2xl mt-8">
                 <div className="flex h-12 items-center justify-between lg:h-16">
                     <div className="flex items-center space-x-2">
                         <Link
