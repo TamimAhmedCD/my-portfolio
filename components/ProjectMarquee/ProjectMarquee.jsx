@@ -12,8 +12,8 @@ export default function ProjectMarquee() {
     ];
 
     return (
-        <div className="my-16">
-            <Marquee className={"[--duration:20s]"}>
+        <div className="my-8 md:12 lg:16">
+            <Marquee className={"[--duration:40s]"}>
                 {imgs.map((src, index) => (
                     <div key={index} className="py-2 px-2 border border-[#6366f1]/20 bg-gray-100 rounded-lg">
                         <Image

@@ -1,3 +1,4 @@
+import AboutMe from "@/components/AboutMe/AboutMe";
 import GreenCard from "@/components/Card";
 import Header from "@/components/Header/Header";
 import Hero from "@/components/Hero/Hero";
@@ -21,6 +22,7 @@ export default function Home() {
       {/* Hero */}
       <Hero />
       <ProjectMarquee />
+      <AboutMe />
     </div>
   );
 }

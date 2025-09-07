@@ -109,7 +109,7 @@ export default function Header() {
                                     <Button variant={"outline"} className="w-full">
                                         Download CV
                                     </Button>
-                                    <PrimaryButton label="Hire Me" />
+                                    <PrimaryButton className="w-full" label="Hire Me" />
                                 </div>
                             </div>
                         </motion.div>
