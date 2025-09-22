@@ -42,42 +42,52 @@ export default function AboutMe() {
                     </p>
                 </div>
                 {/* Grid */}
-                <div className="grid grid-cols-10 gap-3 sm:gap-6">
-                    <div className="bg-gray-100/90 p-5 rounded-lg shadow-2xl col-span-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-10 gap-3 sm:gap-6">
+                    {/* Left Side (Image + Intro) */}
+                    <div className="bg-gray-100/90 p-5 rounded-lg shadow-2xl 
+                  col-span-1 sm:col-span-1 lg:col-span-4">
                         <Image
                             src="https://i.ibb.co.com/NnN0hMCW/10003514303.jpg"
                             alt="tamim"
                             width={1000}
                             height={1000}
-                            className="w-full h-[350px] object-cover rounded-md shadow-xl"
+                            className="w-full h-96 sm:h-60 lg:h-[350px] object-cover rounded-md shadow-xl"
                         />
-                        <h3 className="text-gray-900 text-2xl mt-3 font-bold">
+                        <h3 className="text-gray-900 text-xl sm:text-2xl mt-3 font-bold">
                             Hello I am Tamim Ahmed
                         </h3>
                         <p className="text-sm text-gray-800">
                             Frontend & Backend Developer based in Bangladesh.
                         </p>
                     </div>
-                    <div className="bg-gray-100/90 p-5 rounded-lg shadow-2xl col-span-6 text-gray-700">
+
+                    {/* Right Side (Details + Skills) */}
+                    <div className="bg-gray-100/90 p-5 rounded-lg shadow-2xl 
+                  col-span-1 sm:col-span-1 lg:col-span-6 text-gray-700">
                         <p>
                             I'm Tamim Ahmed, a dedicated Frontend & Backend Developer based in
                             Sylhet, Bangladesh. I specialize in building modern web
                             applications with clean code, creative design, and seamless
                             functionality to deliver exceptional digital experiences.
                         </p>
-                        <Separator
-                            className={"my-6 data-[orientation=horizontal]:h-[2px]"}
-                        />
+
+                        <Separator className="my-6 data-[orientation=horizontal]:h-[2px]" />
+
                         <div className="flex flex-wrap gap-3">
                             {skills.map((skill, index) => (
-                                <span key={index} className="bg-white px-2 rounded-md py-2 font-semibold text-gray-500">{skill}</span>
+                                <span
+                                    key={index}
+                                    className="bg-white px-2 rounded-md py-2 font-semibold text-gray-500"
+                                >
+                                    {skill}
+                                </span>
                             ))}
                         </div>
-                        <Separator
-                            className={"my-6 data-[orientation=horizontal]:h-[2px]"}
-                        />
+
+                        <Separator className="my-6 data-[orientation=horizontal]:h-[2px]" />
                     </div>
                 </div>
+
             </div>
         </section>
     );
