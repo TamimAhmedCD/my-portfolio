@@ -3,6 +3,9 @@ import { AnimatedShinyText } from "../magicui/animated-shiny-text";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { Separator } from "../ui/separator";
+import { StackMarquee } from "./StackMarquee";
+import Link from "next/link";
+import PrimaryButton from "../Shared/Button";
 
 export default function AboutMe() {
     const skills = [
@@ -12,6 +15,23 @@ export default function AboutMe() {
         "Tailwind CSS",
         "Node.js",
         "MongoDB",
+    ];
+    const socials = [
+        {
+            name: "Github",
+            icon: "./icon/social/GitHub.svg",
+            link: "https://github.com/TamimAhmedCD",
+        },
+        {
+            name: "LinkedIn",
+            icon: "./icon/social/LinkedIn.svg",
+            link: "https://www.linkedin.com/in/tamim-ahmed-dev",
+        },
+        {
+            name: "WhatsApp",
+            icon: "./icon/social/WhatsApp.svg",
+            link: "https://wa.link/or65v8",
+        },
     ];
     return (
         <section className="mx-auto max-w-7xl font-figtree">
@@ -56,15 +76,43 @@ export default function AboutMe() {
                         <h3 className="text-gray-900 text-xl sm:text-2xl mt-3 font-bold">
                             Hello I am Tamim Ahmed
                         </h3>
-                        <p className="text-sm text-gray-800">
+                        <p className="text-md text-gray-800">
                             Frontend & Backend Developer based in Bangladesh.
                         </p>
+                        {/* Links */}
+                        <div className="flex items-center gap-3 mt-5 mb-5">
+                            {socials.map((social, index) => (
+                                <React.Fragment key={index}>
+                                    <Link
+                                        href={social.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center text-gray-500 hover:text-gray-700"
+                                    >
+                                        <Image
+                                            src={social.icon}
+                                            alt={social.name}
+                                            width={20}
+                                            height={20}
+                                            className="rounded-md h-12 w-12 p-2 border bg-white"
+                                        />
+                                    </Link>
+
+                                    {/* Add separator unless it's the last icon */}
+                                    {index < socials.length - 1 && (
+                                        <Separator orientation="vertical" />
+                                    )}
+                                </React.Fragment>
+                            ))}
+                        </div>
+                        <Separator />
+                        <Link href='tel:+8801742982184'><PrimaryButton label="Contact Me" className="mt-5" /></Link>
                     </div>
 
                     {/* Right Side (Details + Skills) */}
                     <div className="bg-gray-100/90 p-5 rounded-lg shadow-2xl 
                   col-span-1 sm:col-span-1 lg:col-span-6 text-gray-700">
-                        <p>
+                        <p className="text-lg">
                             I'm Tamim Ahmed, a dedicated Frontend & Backend Developer based in
                             Sylhet, Bangladesh. I specialize in building modern web
                             applications with clean code, creative design, and seamless
@@ -77,7 +125,7 @@ export default function AboutMe() {
                             {skills.map((skill, index) => (
                                 <span
                                     key={index}
-                                    className="bg-white px-2 rounded-md py-2 font-semibold text-gray-500"
+                                    className="bg-white px-2 rounded-md py-2 font-semibold text-gray-500 text-lg"
                                 >
                                     {skill}
                                 </span>
@@ -85,6 +133,11 @@ export default function AboutMe() {
                         </div>
 
                         <Separator className="my-6 data-[orientation=horizontal]:h-[2px]" />
+
+                        <div>
+                            <h5 className="font-semibold text-gray-500 text-xl mb-3">Stack</h5>
+                            <StackMarquee />
+                        </div>
                     </div>
                 </div>
 

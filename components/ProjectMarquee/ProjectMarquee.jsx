@@ -13,13 +13,13 @@ export default function ProjectMarquee() {
 
     return (
         <div className="my-8 md:12 lg:16">
-            <Marquee className={"[--duration:50s]"}>
+            <Marquee className={"[--duration:60s]"}>
                 {imgs.map((src, index) => (
                     <div key={index} className="py-2 px-2 border border-[#6366f1]/20 bg-gray-100 rounded-lg">
                         <Image
                             src={src}
                             alt={`product-${index}`}
-                            width={600}
+                            width={900}
                             height={338}
                             className="rounded-lg object-cover"
                         />
