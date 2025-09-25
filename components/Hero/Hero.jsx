@@ -3,7 +3,7 @@ import React from "react";
 import { AnimatedShinyText } from "../magicui/animated-shiny-text";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
-import PrimaryButton from "../Shared/Button";
+import { PrimaryButton } from "../Shared/Button";
 
 export default function Hero() {
     return (

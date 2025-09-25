@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Separator } from "../ui/separator";
 import { StackMarquee } from "./StackMarquee";
 import Link from "next/link";
-import PrimaryButton from "../Shared/Button";
+import { PrimaryButton } from "../Shared/Button";
 import github from "../../public/Icon/Social/GitHub.svg";
 import linkedin from "../../public/Icon/Social/LinkedIn.svg";
 import whatsapp from "../../public/Icon/Social/WhatsApp.svg";

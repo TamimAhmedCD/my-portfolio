@@ -6,11 +6,11 @@ import { Menu, X, } from "lucide-react";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import Image from "next/image";
-import PrimaryButton from "../Shared/Button";
+import { PrimaryButton } from "../Shared/Button";
 
 const navItems = [
     { name: "Home", href: "/" },
-    { name: "Features", href: "/features" },
+    { name: "Works", href: "/works" },
     {
         name: "Products",
         href: "/products",

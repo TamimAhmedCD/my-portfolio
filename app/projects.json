@@ -1,0 +1,122 @@
+[
+  {
+    "id": "learning-management-system",
+    "icon": "/Project/icon/KhalilComputer.svg",
+    "name": "Khalil Computer",
+    "subject": "Learning Management System",
+    "category": ["Web Design", "Development"],
+    "thumbnail": "/Project/Project-1.jpg",
+    "description": "Khalil Computer is a web-based learning management system that provides a user-friendly interface for managing and tracking student progress. It offers features such as course creation, assignment submission, grade calculation, and progress tracking. The system is designed to be user-friendly and intuitive, making it accessible to students and teachers alike.",
+    "goal": {
+      "text": "The primary goal of Khalil Computer is to provide an easy-to-use online platform for students and teachers to manage courses, assignments, and grades efficiently.",
+      "images": [
+        "/Project/KhalilComputer-Goal-1.jpg",
+        "/Project/KhalilComputer-Goal-2.jpg"
+      ]
+    },
+    "challenge": {
+      "text": "The challenge was to create a comprehensive learning management system that is intuitive for both students and teachers, while supporting multiple features like course creation, progress tracking, and assignment submission.",
+      "images": [
+        "/Project/KhalilComputer-Challenge-1.jpg",
+        "/Project/KhalilComputer-Challenge-2.jpg"
+      ]
+    },
+    "result": {
+      "text": "Khalil Computer successfully provides a seamless learning experience, allowing teachers to manage courses and track student progress efficiently, while students can easily access materials, submit assignments, and monitor their performance.",
+      "images": [
+        "/Project/KhalilComputer-Result-1.jpg",
+        "/Project/KhalilComputer-Result-2.jpg"
+      ]
+    },
+    "shortDes": "Khalil Computer is a web-based LMS providing an easy-to-use platform for students and teachers."
+  },
+
+  {
+    "id": "digital-marketing-agency",
+    "icon": "/Project/icon/ZakerITSolutions.jpg",
+    "name": "Zaker IT Solutions",
+    "subject": "Digital Marketing Agency",
+    "category": ["Web Design", "Development", "Digital Marketing"],
+    "thumbnail": "/Project/Project-2.png",
+    "description": "Zaker IT Solutions is a modern digital marketing agency that helps businesses grow online. It provides services like web development, SEO, social media marketing, PPC campaigns, content marketing, and video editing. The agency focuses on delivering effective digital strategies to boost brand visibility and engagement.",
+    "goal": {
+      "text": "The primary goal of Zaker IT Solutions is to provide businesses with an integrated digital platform to enhance their online presence, attract customers, and grow revenue.",
+      "images": ["/Project/ZakerIT-Goal-1.jpg", "/Project/ZakerIT-Goal-2.jpg"]
+    },
+    "challenge": {
+      "text": "The challenge was to build a versatile platform capable of offering multiple services, including web development, SEO, social media management, and video editing, while ensuring user-friendly access for businesses of all sizes.",
+      "images": [
+        "/Project/ZakerIT-Challenge-1.jpg",
+        "/Project/ZakerIT-Challenge-2.jpg"
+      ]
+    },
+    "result": {
+      "text": "Zaker IT Solutions successfully delivers a wide range of digital marketing services, helping businesses improve online visibility, engage with their audience effectively, and achieve measurable growth.",
+      "images": [
+        "/Project/ZakerIT-Result-1.jpg",
+        "/Project/ZakerIT-Result-2.jpg"
+      ]
+    },
+    "shortDes": "Zaker IT Solutions is a digital marketing agency providing web development, SEO, social media marketing, and video editing services."
+  },
+
+  {
+    "id": "modern-blog-website",
+    "icon": "/Project/icon/WRITING.svg",
+    "name": "WRITING",
+    "subject": "Modern Blog Website",
+    "category": ["Graphic Design", "Development"],
+    "thumbnail": "/Project/Project-3.png",
+    "description": "WRITING is a modern blog platform that allows users to register, login, create, edit, and delete blog posts. Users can also comment on posts and save their favorite articles in a wishlist. The platform provides a seamless and interactive experience for content creators and readers alike.",
+    "goal": {
+      "text": "The primary goal of WRITING is to create a user-friendly blogging platform where users can easily publish and manage their content while engaging with other readers through comments and wishlists.",
+      "images": ["/Project/WRITING-Goal-1.png", "/Project/WRITING-Goal-2.png"]
+    },
+    "challenge": {
+      "text": "The challenge was to build a modern, interactive blog system with features like authentication, CRUD for posts, comments, and wishlist functionality, while keeping the UI intuitive and responsive.",
+      "images": [
+        "/Project/WRITING-Challenge-1.png",
+        "/Project/WRITING-Challenge-2.png"
+      ]
+    },
+    "result": {
+      "text": "WRITING successfully delivers a full-featured blogging experience where users can create, manage, and interact with posts seamlessly. The platform’s wishlist, comment system, and responsive design enhance user engagement and satisfaction.",
+      "images": [
+        "/Project/WRITING-Result-1.png",
+        "/Project/WRITING-Result-2.png"
+      ]
+    },
+    "shortDes": "A modern, interactive blog platform with user authentication, post management, comments, and wishlist features."
+  },
+  {
+    "id": "asset-ease",
+    "icon": "/Project/icon/AssetEase.svg",
+    "name": "AssetEase",
+    "subject": "Asset Management Platform",
+    "category": ["Web Design", "Development"],
+    "thumbnail": "/Project/Project-4.png",
+    "description": "AssetEase is a web-based asset management platform designed to help businesses and individuals track, organize, and manage their assets efficiently. The platform provides an intuitive interface, detailed reporting, and real-time tracking to simplify asset management.",
+    "goal": {
+      "text": "The primary goal of AssetEase is to provide users with an easy-to-use platform for managing all types of assets efficiently, enabling better organization, tracking, and reporting.",
+      "images": [
+        "/Project/AssetEase-Goal-1.png",
+        "/Project/AssetEase-Goal-2.png"
+      ]
+    },
+    "challenge": {
+      "text": "The challenge was to create a robust and scalable system capable of handling multiple asset types while providing real-time updates, analytics, and a clean, user-friendly interface for both desktop and mobile users.",
+      "images": [
+        "/Project/AssetEase-Challenge-1.png",
+        "/Project/AssetEase-Challenge-2.png"
+      ]
+    },
+    "result": {
+      "text": "AssetEase successfully delivers a modern, responsive, and efficient asset management platform. Users can track, organize, and report on assets seamlessly, improving operational efficiency and reducing management overhead.",
+      "images": [
+        "/Project/AssetEase-Result-1.png",
+        "/Project/AssetEase-Result-2.png"
+      ]
+    },
+    "shortDes": "A modern, responsive asset management platform for tracking, organizing, and reporting assets efficiently."
+  }
+]

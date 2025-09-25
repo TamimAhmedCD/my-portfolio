@@ -2,8 +2,10 @@ import React from "react";
 import { AnimatedShinyText } from "../magicui/animated-shiny-text";
 import { cn } from "@/lib/utils";
 import ProjectCard from "./ProjectCard";
+import projects from "../../app/projects.json"
 
 export default function Work() {
+
     return (
         <div className="mx-auto max-w-7xl font-figtree my-8 md:my-12 lg:my-16">
 
@@ -32,7 +34,7 @@ export default function Work() {
                         technologies, clean architecture, and creative design.
                     </p>
                 </div>
-                <ProjectCard />
+                <ProjectCard projects={projects} />
             </div>
         </div>
     );
