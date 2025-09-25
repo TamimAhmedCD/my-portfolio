@@ -3,6 +3,7 @@ import GreenCard from "@/components/Card";
 import Header from "@/components/Header/Header";
 import Hero from "@/components/Hero/Hero";
 import ProjectMarquee from "@/components/ProjectMarquee/ProjectMarquee";
+import Work from "@/components/Work/Work";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       <Hero />
       <ProjectMarquee />
       <AboutMe />
+      <Work />
     </div>
   );
 }

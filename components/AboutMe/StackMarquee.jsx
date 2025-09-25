@@ -6,42 +6,42 @@ const reviews = [
     {
         name: "HTML",
         work: "Markup Language",
-        img: "./icon/Stack/HTML.svg",
+        img: "/icon/Stack/HTML.svg",
     },
     {
         name: "CSS",
         work: "Styling Language",
-        img: "./icon/Stack/CSS.svg",
+        img: "/icon/Stack/CSS.svg",
     },
     {
         name: "JavaScript",
         work: "Programming Language",
-        img: "./icon/Stack/JavaScript.svg",
+        img: "/icon/Stack/JavaScript.svg",
     },
     {
         name: "React.js",
         work: "JavaScript library",
-        img: "./icon/Stack/React.js.svg",
+        img: "/icon/Stack/React.js.svg",
     },
     {
         name: "Next.js",
         work: "React Framework",
-        img: "./icon/Stack/Next.js.svg",
+        img: "/icon/Stack/Next.js.svg",
     },
     {
         name: "MongoDB",
         work: "NoSQL Database",
-        img: "./icon/Stack/MongoDB.svg",
+        img: "/icon/Stack/MongoDB.svg",
     },
     {
         name: "Node.js",
         work: "JavaScript Runtime",
-        img: "./icon/Stack/Node.js.svg",
+        img: "/icon/Stack/Node.js.svg",
     },
     {
         name: "Express.js",
         work: "Backend Framework",
-        img: "./icon/Stack/Express.js.svg",
+        img: "/icon/Stack/Express.js.svg",
     },
 ];
 

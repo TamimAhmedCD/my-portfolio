@@ -19,17 +19,17 @@ export default function AboutMe() {
     const socials = [
         {
             name: "Github",
-            icon: "./icon/social/GitHub.svg",
+            icon: "/icon/social/GitHub.svg",
             link: "https://github.com/TamimAhmedCD",
         },
         {
             name: "LinkedIn",
-            icon: "./icon/social/LinkedIn.svg",
+            icon: "/icon/social/LinkedIn.svg",
             link: "https://www.linkedin.com/in/tamim-ahmed-dev",
         },
         {
             name: "WhatsApp",
-            icon: "./icon/social/WhatsApp.svg",
+            icon: "/icon/social/WhatsApp.svg",
             link: "https://wa.link/or65v8",
         },
     ];
@@ -64,7 +64,7 @@ export default function AboutMe() {
                 {/* Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-10 gap-3 sm:gap-6">
                     {/* Left Side (Image + Intro) */}
-                    <div className="bg-gray-100/90 p-5 rounded-lg shadow-2xl 
+                    <div className="bg-gray-100/90 p-5 rounded-lg border
                   col-span-1 sm:col-span-1 lg:col-span-4">
                         <Image
                             src="https://i.ibb.co.com/NnN0hMCW/10003514303.jpg"
@@ -110,7 +110,7 @@ export default function AboutMe() {
                     </div>
 
                     {/* Right Side (Details + Skills) */}
-                    <div className="bg-gray-100/90 p-5 rounded-lg shadow-2xl 
+                    <div className="bg-gray-100/90 p-5 rounded-lg border
                   col-span-1 sm:col-span-1 lg:col-span-6 text-gray-700">
                         <p className="text-lg">
                             I'm Tamim Ahmed, a dedicated Frontend & Backend Developer based in
