@@ -6,6 +6,9 @@ import { Separator } from "../ui/separator";
 import { StackMarquee } from "./StackMarquee";
 import Link from "next/link";
 import PrimaryButton from "../Shared/Button";
+import github from "../../public/Icon/Social/GitHub.svg";
+import linkedin from "../../public/Icon/Social/LinkedIn.svg";
+import whatsapp from "../../public/Icon/Social/WhatsApp.svg";
 
 export default function AboutMe() {
     const skills = [
@@ -19,17 +22,17 @@ export default function AboutMe() {
     const socials = [
         {
             name: "Github",
-            icon: "/icon/social/GitHub.svg",
+            icon: github,
             link: "https://github.com/TamimAhmedCD",
         },
         {
             name: "LinkedIn",
-            icon: "/icon/social/LinkedIn.svg",
+            icon: linkedin,
             link: "https://www.linkedin.com/in/tamim-ahmed-dev",
         },
         {
             name: "WhatsApp",
-            icon: "/icon/social/WhatsApp.svg",
+            icon: whatsapp,
             link: "https://wa.link/or65v8",
         },
     ];
@@ -82,27 +85,22 @@ export default function AboutMe() {
                         {/* Links */}
                         <div className="flex items-center gap-3 mt-5 mb-5">
                             {socials.map((social, index) => (
-                                <React.Fragment key={index}>
-                                    <Link
-                                        href={social.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex items-center text-gray-500 hover:text-gray-700"
-                                    >
-                                        <Image
-                                            src={social.icon}
-                                            alt={social.name}
-                                            width={20}
-                                            height={20}
-                                            className="rounded-md h-12 w-12 p-2 border bg-white"
-                                        />
-                                    </Link>
 
-                                    {/* Add separator unless it's the last icon */}
-                                    {index < socials.length - 1 && (
-                                        <Separator orientation="vertical" />
-                                    )}
-                                </React.Fragment>
+                                <Link
+                                    key={index}
+                                    href={social.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <Image
+                                        src={social.icon}
+                                        alt={social.name}
+                                        width={20}
+                                        height={20}
+                                        className="rounded-md h-12 w-12 p-[10px] border bg-white"
+                                    />
+                                </Link>
+
                             ))}
                         </div>
                         <Separator />

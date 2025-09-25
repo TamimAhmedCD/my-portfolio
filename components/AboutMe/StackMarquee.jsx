@@ -2,46 +2,55 @@ import { cn } from "@/lib/utils";
 import { Marquee } from "../magicui/marquee";
 import Image from "next/image";
 
+import html from "../../public/Icon/Stack/HTML.svg";
+import css from "../../public/Icon/Stack/CSS.svg";
+import react from "../../public/Icon/Stack/React.js.svg";
+import js from "../../public/Icon/Stack/Javascript.svg";
+import next from "../../public/Icon/Stack/Next.js.svg";
+import MongoDB from "../../public/Icon/Stack/MongoDB.svg";
+import node from "../../public/Icon/Stack/Node.js.svg";
+import express from "../../public/Icon/Stack/Express.js.svg";
+
 const reviews = [
     {
         name: "HTML",
         work: "Markup Language",
-        img: "/icon/Stack/HTML.svg",
+        img: html,
     },
     {
         name: "CSS",
         work: "Styling Language",
-        img: "/icon/Stack/CSS.svg",
+        img: css,
     },
     {
         name: "JavaScript",
         work: "Programming Language",
-        img: "/icon/Stack/JavaScript.svg",
+        img: js,
     },
     {
         name: "React.js",
         work: "JavaScript library",
-        img: "/icon/Stack/React.js.svg",
+        img: react,
     },
     {
         name: "Next.js",
         work: "React Framework",
-        img: "/icon/Stack/Next.js.svg",
+        img: next,
     },
     {
         name: "MongoDB",
         work: "NoSQL Database",
-        img: "/icon/Stack/MongoDB.svg",
+        img: MongoDB,
     },
     {
         name: "Node.js",
         work: "JavaScript Runtime",
-        img: "/icon/Stack/Node.js.svg",
+        img: node,
     },
     {
         name: "Express.js",
         work: "Backend Framework",
-        img: "/icon/Stack/Express.js.svg",
+        img: express,
     },
 ];
 
