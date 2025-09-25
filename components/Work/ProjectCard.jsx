@@ -1,11 +1,9 @@
 import Image from "next/image";
 import React from "react";
-import { Button } from "../ui/button";
 import { SecondaryButton } from "../Shared/Button";
 import Link from "next/link";
 
 export default function ProjectCard({ projects }) {
-    console.log(projects);
     return (
         <div>
             {projects.map((project, index) => (

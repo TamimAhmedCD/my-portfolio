@@ -17,9 +17,6 @@ export default function Home() {
         }}
       />
 
-      {/* Header */}
-      <Header />
-
       {/* Hero */}
       <Hero />
       <ProjectMarquee />

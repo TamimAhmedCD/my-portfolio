@@ -1,5 +1,6 @@
 import { Figtree, Instrument_Serif } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header/Header";
 
 const figtree = Figtree({
   subsets: ["latin"],
@@ -25,7 +26,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${instrumentSerif.variable} ${figtree.variable} antialiased`}
       >
-        {children}
+        <div>
+          {/* Header */}
+          <Header />
+          {children}
+        </div>
       </body>
     </html>
   );

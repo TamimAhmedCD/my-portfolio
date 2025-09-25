@@ -1,10 +1,16 @@
+'use client'
 import React from "react";
 import { AnimatedShinyText } from "../magicui/animated-shiny-text";
 import { cn } from "@/lib/utils";
 import ProjectCard from "./ProjectCard";
 import projects from "../../app/projects.json"
+import { usePathname } from "next/navigation";
 
 export default function Work() {
+    const pathname = usePathname();
+
+    // If on home page, show only 3 projects; else show all
+    const displayedProjects = pathname === "/" ? projects.slice(0, 3) : projects;
 
     return (
         <div className="mx-auto max-w-7xl font-figtree my-8 md:my-12 lg:my-16">
@@ -34,7 +40,7 @@ export default function Work() {
                         technologies, clean architecture, and creative design.
                     </p>
                 </div>
-                <ProjectCard projects={projects} />
+                <ProjectCard projects={displayedProjects} />
             </div>
         </div>
     );
