@@ -8,7 +8,7 @@ export default function page() {
             <div className='mx-6 lg:mx-8'>
                 {/* Heading */}
                 <div className="mt-6 mb-8">
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-2">
+                    <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-2">
                         Featured{" "}
                         <span className="font-medium text-[#6366f1] font-instrument-serif italic">
                             Projects

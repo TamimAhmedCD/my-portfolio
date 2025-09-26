@@ -53,7 +53,7 @@ export default function AboutMe() {
                 </div>
                 {/* Heading */}
                 <div className="mt-6 mb-8">
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-2">
+                    <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-2">
                         Tamim Ahmed,{" "}
                         <span className="font-medium text-[#6366f1] font-instrument-serif italic">
                             Your Developer
@@ -123,7 +123,7 @@ export default function AboutMe() {
                             {skills.map((skill, index) => (
                                 <span
                                     key={index}
-                                    className="bg-white px-2 rounded-md py-2 font-semibold text-gray-500 text-lg"
+                                    className="bg-white px-2 rounded-md py-2 text-gray-500 text-lg"
                                 >
                                     {skill}
                                 </span>
