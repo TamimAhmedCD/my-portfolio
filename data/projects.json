@@ -12,13 +12,12 @@
     "description": "Khalil Computer is a web-based learning management system that makes teaching and learning easier with course creation, assignments, grading, and progress tracking in a user-friendly interface for students and teachers.",
     "goal": {
       "text": "The primary goal of Khalil Computer is to provide an easy-to-use online platform for students and teachers to manage courses, assignments, and grades efficiently.",
-      "images": ["/Project/Project-1.jpg", "/Project/Project-1.jpg"]
+      "images": ["https://i.ibb.co.com/JRgH0sd4/khalilcomputergoal.png"]
     },
     "challenge": {
       "text": "The challenge was to create a comprehensive learning management system that is intuitive for both students and teachers, while supporting multiple features like course creation, progress tracking, and assignment submission.",
       "images": [
-        "/Project/KhalilComputer-Challenge-1.jpg",
-        "/Project/KhalilComputer-Challenge-2.jpg"
+        "https://i.ibb.co.com/mVT4MZ4Z/1a41ff28-b482-4b9f-ac25-3301e4a24aef.png"
       ]
     },
     "result": {
@@ -35,6 +34,9 @@
     "id": "digital-marketing-agency",
     "icon": "/Project/icon/ZakerITSolutions.jpg",
     "name": "Zaker IT Solutions",
+    "client": "Zaker IT Solutions",
+    "url": "https://zakeritsolutions.com",
+    "github": "https://github.com/TamimAhmedCD/khalil-computer",
     "subject": "Digital Marketing Agency",
     "category": ["Web Design", "Development", "Digital Marketing"],
     "thumbnail": "/Project/Project-2.png",
@@ -45,17 +47,11 @@
     },
     "challenge": {
       "text": "The challenge was to build a versatile platform capable of offering multiple services, including web development, SEO, social media management, and video editing, while ensuring user-friendly access for businesses of all sizes.",
-      "images": [
-        "/Project/ZakerIT-Challenge-1.jpg",
-        "/Project/ZakerIT-Challenge-2.jpg"
-      ]
+      "images": ["/Project/Project-2.png", "/Project/Project-2.png"]
     },
     "result": {
       "text": "Zaker IT Solutions successfully delivers a wide range of digital marketing services, helping businesses improve online visibility, engage with their audience effectively, and achieve measurable growth.",
-      "images": [
-        "/Project/ZakerIT-Result-1.jpg",
-        "/Project/ZakerIT-Result-2.jpg"
-      ]
+      "images": ["/Project/Project-2.png", "/Project/Project-2.png"]
     },
     "shortDes": "Zaker IT Solutions is a digital marketing agency providing web development, SEO, social media marketing, and video editing services."
   },
