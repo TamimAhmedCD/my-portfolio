@@ -1,5 +1,6 @@
 import AboutMe from "@/components/AboutMe/AboutMe";
 import GreenCard from "@/components/Card";
+import ContactMe from "@/components/ContactMe/ContactMe";
 import Header from "@/components/Header/Header";
 import Hero from "@/components/Hero/Hero";
 import ProjectMarquee from "@/components/ProjectMarquee/ProjectMarquee";
@@ -22,6 +23,7 @@ export default function Home() {
       <ProjectMarquee />
       <AboutMe />
       <Work />
+      <ContactMe />
     </div>
   );
 }
