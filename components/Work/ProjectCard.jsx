@@ -42,7 +42,7 @@ export default function ProjectCard({ projects }) {
 
                         {/* Desktop button */}
                         <div className="hidden md:flex mt-6">
-                            <Link href={`/work/${project.id}`}>
+                            <Link href={`/projects/${project.id}`}>
                                 <SecondaryButton label="View Project" />
                             </Link>
                         </div>
@@ -59,7 +59,7 @@ export default function ProjectCard({ projects }) {
                         />
                         {/* Mobile button (below image) */}
                         <div className="flex md:hidden justify-center mt-6">
-                            <Link href={`/work/${project.id}`} className="w-full">
+                            <Link href={`/projects/${project.id}`} className="w-full">
                                 <Button variant={"outline"} className={"text-gray-800 font-medium w-full"}>View Project</Button>
                             </Link>
                         </div>

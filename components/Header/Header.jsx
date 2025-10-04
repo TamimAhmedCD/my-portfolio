@@ -10,7 +10,7 @@ import { PrimaryButton } from "../Shared/Button";
 
 const navItems = [
     { name: "Home", href: "/" },
-    { name: "Works", href: "/works" },
+    { name: "Projects", href: "/projects" },
     {
         name: "Products",
         href: "/products",

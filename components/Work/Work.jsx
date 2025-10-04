@@ -3,7 +3,7 @@ import React from "react";
 import { AnimatedShinyText } from "../magicui/animated-shiny-text";
 import { cn } from "@/lib/utils";
 import ProjectCard from "./ProjectCard";
-import projects from "../../app/projects.json"
+import projects from "../../data/projects.json"
 import { usePathname } from "next/navigation";
 
 export default function Work() {

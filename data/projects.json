@@ -3,16 +3,16 @@
     "id": "learning-management-system",
     "icon": "/Project/icon/KhalilComputer.svg",
     "name": "Khalil Computer",
+    "client": "Khalil Computer",
+    "url": "https://khalilcomputer.com",
+    "github": "https://github.com/TamimAhmedCD/khalil-computer",
     "subject": "Learning Management System",
     "category": ["Web Design", "Development"],
     "thumbnail": "/Project/Project-1.jpg",
-    "description": "Khalil Computer is a web-based learning management system that provides a user-friendly interface for managing and tracking student progress. It offers features such as course creation, assignment submission, grade calculation, and progress tracking. The system is designed to be user-friendly and intuitive, making it accessible to students and teachers alike.",
+    "description": "Khalil Computer is a web-based learning management system that makes teaching and learning easier with course creation, assignments, grading, and progress tracking in a user-friendly interface for students and teachers.",
     "goal": {
       "text": "The primary goal of Khalil Computer is to provide an easy-to-use online platform for students and teachers to manage courses, assignments, and grades efficiently.",
-      "images": [
-        "/Project/KhalilComputer-Goal-1.jpg",
-        "/Project/KhalilComputer-Goal-2.jpg"
-      ]
+      "images": ["/Project/Project-1.jpg", "/Project/Project-1.jpg"]
     },
     "challenge": {
       "text": "The challenge was to create a comprehensive learning management system that is intuitive for both students and teachers, while supporting multiple features like course creation, progress tracking, and assignment submission.",

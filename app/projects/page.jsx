@@ -1,13 +1,13 @@
 import ProjectCard from '@/components/Work/ProjectCard'
 import React from 'react'
-import projects from '../../app/projects.json'
+import projects from '../../data/projects.json'
 
-export default function page() {
+export default function Projects() {
     return (
-        <div className='mx-auto max-w-7xl font-figtree mt-32 sm:mt-40 lg:mt-48'>
+        <div className='mx-auto max-w-7xl font-figtree mt-28 md:mt-36'>
             <div className='mx-6 lg:mx-8'>
                 {/* Heading */}
-                <div className="mt-6 mb-8">
+                <div className="mb-8">
                     <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-2">
                         Featured{" "}
                         <span className="font-medium text-[#6366f1] font-instrument-serif italic">
