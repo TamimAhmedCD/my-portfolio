@@ -18,7 +18,7 @@ export default function Hero() {
                         )}
                     >
                         <AnimatedShinyText className="inline-flex items-center text-xs sm:text-base text-[#6366f1]/80 justify-center px-3 sm:px-4 py-1 transition ease-out hover:duration-300 hover:dark:text-neutral-400">
-                            <span>✨ Crafting modern web experiences</span>
+                            <span>✨ Available For Hire</span>
                             <ArrowRightIcon className="ml-1 w-3 h-3 sm:w-4 sm:h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
                         </AnimatedShinyText>
                     </div>

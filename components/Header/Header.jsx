@@ -35,7 +35,7 @@ export default function Header() {
             transition={{ duration: 0.3, ease: "easeInOut" }}
 
         >
-            <div className="relative mx-6 lg:mx-8 px-2 lg:px-4 border rounded-xl lg:rounded-2xl mt-8 bg-background/30 backdrop-blur-lg">
+            <div className="relative mx-6 lg:mx-8 px-2 lg:px-4 border rounded-xl lg:rounded-2xl mt-8 bg-background/30 backdrop-blur-xs">
                 {/* Gradient overlays on left and right */}
                 <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background/30 to-transparent"></div>
                 <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background/30 to-transparent"></div>

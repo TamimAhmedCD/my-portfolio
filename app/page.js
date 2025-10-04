@@ -1,7 +1,6 @@
 import AboutMe from "@/components/AboutMe/AboutMe";
-import GreenCard from "@/components/Card";
 import ContactMe from "@/components/ContactMe/ContactMe";
-import Header from "@/components/Header/Header";
+import CTA from "@/components/CTA/CTA";
 import Hero from "@/components/Hero/Hero";
 import ProjectMarquee from "@/components/ProjectMarquee/ProjectMarquee";
 import Work from "@/components/Work/Work";
@@ -24,6 +23,7 @@ export default function Home() {
       <AboutMe />
       <Work />
       <ContactMe />
+      <CTA />
     </div>
   );
 }
