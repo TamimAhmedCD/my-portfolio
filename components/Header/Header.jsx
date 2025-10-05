@@ -12,11 +12,10 @@ const navItems = [
     { name: "Home", href: "/" },
     { name: "Projects", href: "/projects" },
     {
-        name: "Products",
-        href: "/products",
+        name: "About",
+        href: "/about",
     },
-    { name: "Pricing", href: "/pricing" },
-    { name: "About", href: "/about" },
+    { name: "Contact", href: "/contact" },
 ];
 
 export default function Header() {
