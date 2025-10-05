@@ -2,6 +2,7 @@ import { Figtree, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header/Header";
 import GradualBlurMemo from "@/components/GradualBlur";
+import { ReactLenis } from "lenis/react";
 
 const figtree = Figtree({
   subsets: ["latin"],
@@ -28,11 +29,11 @@ export default function RootLayout({ children }) {
         className={`${instrumentSerif.variable} ${figtree.variable} antialiased`}
         style={{ position: "relative", height: "100vh", overflow: "hidden" }}
       >
-        <div style={{ height: "100%", overflowY: "auto" }}>
+        <ReactLenis style={{ height: "100%", overflowY: "auto" }}>
           {/* Header */}
           <Header />
           {children}
-        </div>
+        </ReactLenis>
         <GradualBlurMemo
           target="parent"
           position="bottom"
