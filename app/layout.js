@@ -1,6 +1,7 @@
 import { Figtree, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header/Header";
+import GradualBlurMemo from "@/components/GradualBlur";
 
 const figtree = Figtree({
   subsets: ["latin"],
@@ -25,12 +26,23 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         className={`${instrumentSerif.variable} ${figtree.variable} antialiased`}
+        style={{ position: "relative", height: "100vh", overflow: "hidden" }}
       >
-        <div>
+        <div style={{ height: "100%", overflowY: "auto" }}>
           {/* Header */}
           <Header />
           {children}
         </div>
+        <GradualBlurMemo
+          target="parent"
+          position="bottom"
+          height="6rem"
+          strength={1.5}
+          divCount={5}
+          curve="bezier"
+          exponential={true}
+          opacity={1}
+        />
       </body>
     </html>
   );
