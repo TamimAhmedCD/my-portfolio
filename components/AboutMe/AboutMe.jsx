@@ -9,6 +9,7 @@ import { PrimaryButton } from "../Shared/Button";
 import github from "../../public/Icon/Social/GitHub.svg";
 import linkedin from "../../public/Icon/Social/LinkedIn.svg";
 import whatsapp from "../../public/Icon/Social/WhatsApp.svg";
+import { Button } from "../ui/button";
 
 export default function AboutMe() {
     const skills = [
@@ -39,7 +40,6 @@ export default function AboutMe() {
     return (
         <section className="mx-auto max-w-7xl font-figtree">
             <div className="mx-6 lg:mx-8">
-                {" "}
                 <div className="flex items-center justify-center">
                     <div
                         className={cn(
@@ -104,7 +104,11 @@ export default function AboutMe() {
                             ))}
                         </div>
                         <Separator />
-                        <Link href='tel:+8801742982184'><PrimaryButton label="Contact Me" className="mt-5" /></Link>
+                        <div className="flex items-center gap-3 mt-5">
+                            <Link href='tel:+8801742982184'><PrimaryButton label="Contact Me" /></Link>
+                            <Button variant={"outline"} className={"py-[10px] px-6"}>Download CV</Button>
+                        </div>
+
                     </div>
 
                     {/* Right Side (Details + Skills) */}

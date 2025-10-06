@@ -55,6 +55,7 @@ export default function Header() {
                         {navItems.map((item) => (
                             <div key={item.name}>
                                 <Link
+                                    onClick={() => scrollTo(0, 0)}
                                     prefetch={false}
                                     href={item.href}
                                     className="text-foreground/70 font-sans hover:text-foreground transition-all duration-300"
