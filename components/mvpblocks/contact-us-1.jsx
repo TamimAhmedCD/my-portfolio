@@ -20,9 +20,24 @@ export default function ContactUs1() {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      // Perform form submission logic here
-      console.log("Form submitted:", { name, email, message });
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      // Prepare form data
+      const formData = { name, email, message }
+
+      const response = await fetch('api/send-email', {
+        method: "POST",
+        headers: {
+          "content-type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to send email')
+      }
+      const data = await response.json()
+      console.log("Email sent:", data)
+
+      // Reset form
       setName("");
       setEmail("");
       setMessage("");

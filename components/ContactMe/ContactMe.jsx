@@ -1,4 +1,3 @@
-import React from 'react'
 import ContactUs1 from '../mvpblocks/contact-us-1'
 
 export default function ContactMe() {
