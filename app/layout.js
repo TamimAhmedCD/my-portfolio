@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header/Header";
 import GradualBlurMemo from "@/components/GradualBlur";
 import { ReactLenis } from "lenis/react";
+import Footer from "@/components/Footer/Footer";
 
 const figtree = Figtree({
   subsets: ["latin"],
@@ -33,6 +34,7 @@ export default function RootLayout({ children }) {
           {/* Header */}
           <Header />
           {children}
+          <Footer />
         </ReactLenis>
         <GradualBlurMemo
           target="parent"
