@@ -1,7 +1,11 @@
+"use client";
+
+import React from "react";
 import { cn } from "@/lib/utils";
 import { Marquee } from "../magicui/marquee";
 import Image from "next/image";
 
+// Asset Imports
 import html from "../../public/Icon/Stack/HTML.svg";
 import css from "../../public/Icon/Stack/CSS.svg";
 import react from "../../public/Icon/Stack/React.js.svg";
@@ -11,74 +15,48 @@ import MongoDB from "../../public/Icon/Stack/MongoDB.svg";
 import node from "../../public/Icon/Stack/Node.js.svg";
 import express from "../../public/Icon/Stack/Express.js.svg";
 
-const reviews = [
-    {
-        name: "HTML",
-        work: "Markup Language",
-        img: html,
-    },
-    {
-        name: "CSS",
-        work: "Styling Language",
-        img: css,
-    },
-    {
-        name: "JavaScript",
-        work: "Programming Language",
-        img: js,
-    },
-    {
-        name: "React.js",
-        work: "JavaScript library",
-        img: react,
-    },
-    {
-        name: "Next.js",
-        work: "React Framework",
-        img: next,
-    },
-    {
-        name: "MongoDB",
-        work: "NoSQL Database",
-        img: MongoDB,
-    },
-    {
-        name: "Node.js",
-        work: "JavaScript Runtime",
-        img: node,
-    },
-    {
-        name: "Express.js",
-        work: "Backend Framework",
-        img: express,
-    },
+const stacks = [
+    { name: "HTML", category: "Markup", img: html },
+    { name: "CSS", category: "Styling", img: css },
+    { name: "JavaScript", category: "Logic", img: js },
+    { name: "React.js", category: "Library", img: react },
+    { name: "Next.js", category: "Framework", img: next },
+    { name: "MongoDB", category: "Database", img: MongoDB },
+    { name: "Node.js", category: "Runtime", img: node },
+    { name: "Express.js", category: "Backend", img: express },
 ];
 
-const firstRow = reviews.slice(0, reviews.length / 2);
-const secondRow = reviews.slice(reviews.length / 2);
+const firstRow = stacks.slice(0, stacks.length / 2);
+const secondRow = stacks.slice(stacks.length / 2);
 
-const ReviewCard = ({
-    img,
-    name,
-    work,
-}) => {
+const TechCard = ({ img, name, category }) => {
     return (
         <figure
             className={cn(
-                "relative h-full w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
-                // light styles
-                "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
-                // dark styles
-                "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
+                "relative w-56 cursor-pointer overflow-hidden rounded-2xl border p-4 transition-all duration-300",
+                // Light Mode: Soft border and white glass
+                "border-black/[0.08] bg-white/[0.4] hover:bg-white hover:border-indigo-500/30 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)]",
+                // Dark Mode: Muted glass and indigo glow
+                "dark:border-white/[0.08] dark:bg-white/[0.02] dark:hover:bg-white/[0.05] dark:hover:border-indigo-500/50"
             )}
         >
             <div className="flex flex-row items-center gap-4">
-                <Image className="p-2 bg-white rounded-md border h-13 w-13" width="45" height="45" alt="" src={img} />
-                <div className="flex flex-col">
-                    <figcaption className="dark:text-white font-bold">
+                <div className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white p-2 shadow-sm border border-black/[0.05]">
+                    <Image
+                        className="object-contain"
+                        width={32}
+                        height={32}
+                        alt={name}
+                        src={img}
+                    />
+                </div>
+                <div className="flex flex-col overflow-hidden">
+                    <figcaption className="text-sm font-bold text-foreground truncate">
                         {name}
                     </figcaption>
-                    <p className="text-sm font-medium dark:text-white/40 text-gray-400">{work}</p>
+                    <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground/60">
+                        {category}
+                    </p>
                 </div>
             </div>
         </figure>
@@ -87,19 +65,24 @@ const ReviewCard = ({
 
 export function StackMarquee() {
     return (
-        <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-            <Marquee pauseOnHover className="[--duration:40s]">
-                {firstRow.map((review) => (
-                    <ReviewCard key={review.name} {...review} />
+        <div className="relative flex w-full flex-col items-center justify-center overflow-hidden py-4">
+            {/* First Row */}
+            <Marquee pauseOnHover className="[--duration:30s]">
+                {firstRow.map((stack) => (
+                    <TechCard key={stack.name} {...stack} />
                 ))}
             </Marquee>
-            <Marquee reverse pauseOnHover className="[--duration:40s]">
-                {secondRow.map((review) => (
-                    <ReviewCard key={review.name} {...review} />
+
+            {/* Second Row */}
+            <Marquee reverse pauseOnHover className="[--duration:30s] mt-4">
+                {secondRow.map((stack) => (
+                    <TechCard key={stack.name} {...stack} />
                 ))}
             </Marquee>
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-gray-100/90"></div>
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-gray-100/90"></div>
+
+            {/* Premium Gradient Masks (Fade to Background) */}
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-background via-background/50 to-transparent"></div>
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-background via-background/50 to-transparent"></div>
         </div>
     );
 }
