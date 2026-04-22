@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -7,6 +7,7 @@ import Earth from "@/components/ui/globe";
 import { SparklesCore } from "@/components/ui/sparkles";
 import { Label } from "@/components/ui/label";
 import { PrimaryButton } from "../Shared/Button";
+import { Mail, Globe2, Sparkles } from "lucide-react";
 
 export default function ContactUs1() {
   const [name, setName] = useState("");
@@ -14,165 +15,171 @@ export default function ContactUs1() {
   const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const formRef = useRef(null);
-  const isInView = useInView(formRef, { once: true, amount: 0.3 });
+
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      // Prepare form data
-      const formData = { name, email, message }
-
-      const response = await fetch('api/send-email', {
+      const formData = { name, email, message };
+      const response = await fetch("api/send-email", {
         method: "POST",
-        headers: {
-          "content-type": "application/json"
-        },
-        body: JSON.stringify(formData)
-      })
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-      if (!response.ok) {
-        throw new Error('Failed to send email')
-      }
-      const data = await response.json()
-      console.log("Email sent:", data)
+      if (!response.ok) throw new Error("Failed to send email");
 
-      // Reset form
       setName("");
       setEmail("");
       setMessage("");
       setIsSubmitted(true);
-      setTimeout(() => {
-        setIsSubmitted(false);
-      }, 5000);
+      setTimeout(() => setIsSubmitted(false), 5000);
     } catch (error) {
       console.error("Error submitting form:", error);
     } finally {
       setIsSubmitting(false);
     }
   };
-  return (
-    <section className="mx-6 lg:mx-8">
-      <div className="rounded-2xl border">
-        <div className="grid md:grid-cols-2">
-          <div className="relative p-6 md:p-10" ref={formRef}>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="flex w-full gap-2"
-            >
-              <h2 className="from-foreground to-foreground/80 mb-2 bg-gradient-to-r bg-clip-text text-4xl font-bold tracking-tight text-transparent md:text-5xl">
-                Contact
-              </h2>
-              <span className="text-[#6366f1] relative z-10 w-full text-4xl font-bold tracking-tight font-instrument-serif italic md:text-5xl">
-                Me
-              </span>
-              <SparklesCore
-                id="tsparticles"
-                background="transparent"
-                minSize={0.6}
-                maxSize={1.4}
-                particleDensity={500}
-                className="absolute inset-0 top-0 h-24 w-full"
-                particleColor="#6366f1"
-              />
-            </motion.div>
 
-            <motion.form
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              onSubmit={handleSubmit}
-              className="mt-8 space-y-6"
-            >
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                <motion.div
-                  className="space-y-2"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 }}
-                >
-                  <Label htmlFor="name">Name</Label>
+  return (
+    <section
+      ref={sectionRef}
+      className="relative mx-auto max-w-7xl px-6 lg:px-8 py-24 lg:py-32 font-figtree"
+    >
+      {/* Dynamic Background Accent */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-[600px] w-[600px] bg-indigo-500/10 dark:bg-indigo-500/5 blur-[120px] rounded-full animate-pulse" />
+
+      {/* Header Area */}
+      <div className="flex flex-col items-center mb-16 lg:mb-24">
+        <div className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-indigo-500/20 bg-indigo-500/5 mb-6">
+          <Sparkles className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />
+          <span className="text-[10px] font-black uppercase tracking-[0.2em] text-indigo-600 dark:text-indigo-400">
+            Open for Collaboration
+          </span>
+        </div>
+        <h2 className="text-5xl lg:text-7xl font-bold text-gray-900 dark:text-white text-center tracking-tighter leading-none">
+          Ready to start a <br />
+          <span className="font-instrument-serif italic font-normal text-indigo-600 dark:text-indigo-400 text-6xl lg:text-8xl">
+            new project?
+          </span>
+        </h2>
+      </div>
+
+      {/* Main Contact Card */}
+      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-0 rounded-[3rem] border border-gray-200 dark:border-white/10 bg-white dark:bg-neutral-900 shadow-2xl overflow-hidden">
+
+        {/* Left Side: The Form (7 Columns) */}
+        <div className="lg:col-span-7 p-8 lg:p-16 border-b lg:border-b-0 lg:border-r border-gray-100 dark:border-white/5">
+          <div className="max-w-xl">
+            <div className="flex items-center gap-3 mb-2">
+              <Mail className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Send a Message</h3>
+            </div>
+            <p className="text-gray-500 dark:text-gray-400 mb-10 font-medium leading-relaxed">
+              Have a specific inquiry or just want to say hi? Fill out the form below.
+            </p>
+
+            <form onSubmit={handleSubmit} className="space-y-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-3">
+                  <Label htmlFor="name" className="text-[10px] uppercase tracking-[0.2em] font-black text-gray-400 dark:text-gray-500 ml-1">Full Name</Label>
                   <Input
                     id="name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    placeholder="Enter your name"
+                    placeholder="John Doe"
+                    className="h-14 rounded-2xl bg-gray-50 dark:bg-neutral-800/50 border-gray-200 dark:border-white/5 focus:border-indigo-500 dark:focus:border-indigo-400 transition-all"
                     required
                   />
-                </motion.div>
-
-                <motion.div
-                  className="space-y-2"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5 }}
-                >
-                  <Label htmlFor="email">Email</Label>
+                </div>
+                <div className="space-y-3">
+                  <Label htmlFor="email" className="text-[10px] uppercase tracking-[0.2em] font-black text-gray-400 dark:text-gray-500 ml-1">Email Address</Label>
                   <Input
                     id="email"
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter your email"
+                    placeholder="hello@example.com"
+                    className="h-14 rounded-2xl bg-gray-50 dark:bg-neutral-800/50 border-gray-200 dark:border-white/5 focus:border-indigo-500 dark:focus:border-indigo-400 transition-all"
                     required
                   />
-                </motion.div>
+                </div>
               </div>
 
-              <motion.div
-                className="space-y-2"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 }}
-              >
-                <Label htmlFor="message">Message</Label>
+              <div className="space-y-3">
+                <Label htmlFor="message" className="text-[10px] uppercase tracking-[0.2em] font-black text-gray-400 dark:text-gray-500 ml-1">Your Message</Label>
                 <Textarea
                   id="message"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  placeholder="Enter your message"
+                  placeholder="Tell me about your project goals..."
+                  className="min-h-[180px] rounded-[2rem] bg-gray-50 dark:bg-neutral-800/50 border-gray-200 dark:border-white/5 focus:border-indigo-500 dark:focus:border-indigo-400 transition-all resize-none p-6"
                   required
-                  className="h-40 resize-none"
                 />
-              </motion.div>
+              </div>
 
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full"
-              >
+              <div className="pt-4">
                 <PrimaryButton
                   isSubmitting={isSubmitting}
                   isSubmitted={isSubmitted}
-                  label="Send Message"
-                  className="w-full"
+                  label="Send Inquiry"
+                  className="w-full lg:w-fit px-12 h-16 rounded-2xl shadow-xl shadow-indigo-500/20 dark:shadow-indigo-500/10 font-bold"
                 />
-              </motion.div>
-            </motion.form>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        {/* Right Side: The Info/Globe (5 Columns) */}
+        <div className="lg:col-span-5 relative bg-neutral-950 p-8 lg:p-16 flex flex-col justify-between overflow-hidden group">
+
+          {/* Constant Sparkles for depth */}
+          <div className="absolute inset-0 z-0">
+            <SparklesCore
+              id="contact-sparkles"
+              background="transparent"
+              minSize={0.4}
+              maxSize={1}
+              particleDensity={80}
+              className="w-full h-full opacity-50"
+              particleColor="#6366f1"
+            />
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="relative flex items-center justify-center overflow-hidden p-6"
-          >
-            <div className="flex flex-col items-center justify-center w-full">
-              <article className="relative w-full h-[350px] md:h-[450px] overflow-hidden rounded-3xl border bg-gradient-to-b from-[#6366f1] to-white/5 p-6 md:p-8 text-3xl tracking-tight text-white md:text-4xl md:leading-[1.05] lg:text-5xl">
-                Let’s build something amazing together — reach out to me anytime.
-                <div className="absolute -right-10 -bottom-10 md:-right-50 md:-bottom-16 w-[250px] md:w-[600px] transition-all duration-700 hover:scale-105">
-                  <Earth
-                    scale={1.1}
-                    baseColor={[0.39, 0.40, 0.95]}
-                    markerColor={[1, 1, 1]}
-                    glowColor={[0.7, 0.72, 1]}
-                  />
-                </div>
-              </article>
+          <div className="relative z-10">
+            <div className="h-14 w-14 rounded-[1.2rem] bg-white/5 backdrop-blur-2xl border border-white/10 flex items-center justify-center mb-10 group-hover:border-indigo-500/50 transition-colors duration-500">
+              <Globe2 className="text-indigo-400 w-7 h-7" />
             </div>
-          </motion.div>
+            <h4 className="text-4xl lg:text-5xl font-bold text-white tracking-tighter leading-[0.9]">
+              Let’s build something <br />
+              <span className="text-indigo-400">extraordinary</span> together.
+            </h4>
+
+            <div className="mt-12 flex items-center gap-4">
+              <div className="flex h-10 px-4 items-center gap-2 rounded-full bg-green-500/10 border border-green-500/20 shadow-[0_0_15px_rgba(34,197,94,0.1)]">
+                <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
+                <span className="text-[10px] font-black text-green-500 uppercase tracking-widest">Available Now</span>
+              </div>
+            </div>
+          </div>
+
+          {/* The Globe Section */}
+          <div className="relative z-10 w-full aspect-square mt-auto translate-y-1/3 scale-150 transition-transform duration-1000 group-hover:scale-[1.55]">
+            <Earth
+              scale={1}
+              baseColor={[0.39, 0.40, 0.95]}
+              markerColor={[1, 1, 1]}
+              glowColor={[0.7, 0.72, 1]}
+            />
+          </div>
+
+          {/* Floating Aesthetic Branding */}
+          <div className="absolute -bottom-12 -right-8 text-[12rem] font-black text-white/[0.02] select-none pointer-events-none group-hover:text-indigo-500/[0.05] transition-colors duration-700">
+            TM
+          </div>
         </div>
       </div>
     </section>
