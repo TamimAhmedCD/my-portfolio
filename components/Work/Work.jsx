@@ -17,9 +17,6 @@ export default function Work() {
 
     return (
         <section className="relative mx-auto max-w-7xl px-6 lg:px-8 py-24 lg:py-32 font-figtree overflow-hidden">
-            {/* Elegant Background Accents */}
-            <div className="absolute top-0 left-1/4 -z-10 h-[400px] w-[400px] bg-indigo-500/5 blur-[120px] rounded-full animate-pulse" />
-            <div className="absolute inset-0 z-0 opacity-[0.02] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
 
             {/* Header with Offset Typography */}
             <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-20 lg:mb-32 relative z-10 gap-8">

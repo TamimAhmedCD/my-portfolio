@@ -37,7 +37,7 @@ export default function Hero() {
     if (!mounted) return null;
 
     return (
-        <section className="relative min-h-screen flex flex-col justify-center items-center pt-20 mt-15 overflow-hidden bg-background font-figtree">
+        <section className="relative min-h-screen flex flex-col justify-center items-center pt-20 mt-15 overflow-hidden font-figtree">
 
             {/* 1. Subtle Developer Grid (Works in Both Themes) */}
             <div className="absolute inset-0 z-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none [mask-image:radial-gradient(ellipse_at_center,white,transparent)] bg-[grid-black/[0.2]] dark:bg-[grid-white/[0.2]] bg-[size:32px_32px]" />
