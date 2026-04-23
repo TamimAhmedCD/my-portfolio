@@ -16,7 +16,7 @@ export default function VibrantCTA() {
     const y = useTransform(scrollYProgress, [0, 1], [-80, 80]);
 
     return (
-        <section ref={containerRef} className="relative py-24 font-figtree">
+        <section ref={containerRef} className="relative pb-24 font-figtree">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 {/* Main Card with Primary Color Background */}
                 <div className="relative group overflow-hidden rounded-[3.5rem] bg-[#6366f1] shadow-[0_40px_80px_-15px_rgba(99,102,241,0.35)]">
