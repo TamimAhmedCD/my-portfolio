@@ -47,7 +47,7 @@ export default function ContactUs1() {
   return (
     <section
       ref={sectionRef}
-      className="relative mx-auto max-w-7xl px-6 lg:px-8 py-24 lg:py-32 font-figtree"
+      className="relative mx-auto max-w-7xl px-6 lg:px-8 font-figtree"
     >
       {/* Dynamic Background Accent */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-[600px] w-[600px] bg-indigo-500/10 dark:bg-indigo-500/5 blur-[120px] rounded-full animate-pulse" />

@@ -46,7 +46,7 @@ const MagneticWrapper = ({ children }) => {
 
 export default function AboutMe() {
     return (
-        <section className="relative mx-auto max-w-7xl px-6 lg:px-8 py-32 font-figtree overflow-hidden">
+        <section className="relative mx-auto max-w-7xl px-6 lg:px-8 my-24 font-figtree overflow-hidden">
 
             {/* Subtle Corporate Background Pattern */}
             <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#6366f1_1px,transparent_1px)] [background-size:40px_40px]" />

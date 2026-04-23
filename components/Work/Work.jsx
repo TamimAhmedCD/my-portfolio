@@ -16,7 +16,7 @@ export default function Work() {
     const displayedProjects = isHome ? projectsData.slice(0, 3) : projectsData;
 
     return (
-        <section className="relative mx-auto max-w-7xl px-6 lg:px-8 py-24 lg:py-32 font-figtree overflow-hidden">
+        <section className="relative mx-auto max-w-7xl px-6 lg:px-8 font-figtree overflow-hidden">
 
             {/* Header with Offset Typography */}
             <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-20 lg:mb-32 relative z-10 gap-8">

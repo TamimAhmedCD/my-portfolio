@@ -72,7 +72,7 @@ export default function Header() {
                                 />
                             </div>
                             <span className="text-foreground text-lg font-bold tracking-tight">
-                                Tamim <span className="text-[#6366f1] font-instrument-serif italic font-medium">.</span>
+                                Tamim <span className="text-[#6366f1] font-instrument-serif italic font-extrabold">.</span>
                             </span>
                         </Link>
 
