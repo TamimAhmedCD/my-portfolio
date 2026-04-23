@@ -35,7 +35,7 @@ export default function page() {
         <section className='mt-28 md:mt-36'>
             <AboutMe />
             {/* Developer Journey */}
-            <section className='mx-auto max-w-7xl font-figtree py-20 px-6 lg:px-8'>
+            <section className='mx-auto max-w-7xl font-figtree px-6 lg:px-8'>
                 {/* Header Section */}
                 <motion.div
                     initial="hidden"

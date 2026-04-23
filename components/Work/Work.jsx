@@ -1,134 +1,131 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
-import { AnimatedShinyText } from "../magicui/animated-shiny-text";
+import { motion, useTransform, useScroll, useSpring } from "framer-motion";
 import { ArrowUpRight, MoveRight, Layers, Sparkles } from "lucide-react";
 import projectsData from "../../data/projects.json";
 
 export default function Work() {
     const pathname = usePathname();
     const isHome = pathname === "/";
-    const displayedProjects = isHome ? projectsData.slice(0, 3) : projectsData;
+    const displayedProjects = isHome ? projectsData.slice(0, 6) : projectsData;
+
+    const targetRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: targetRef,
+    });
+
+    // Smoothen the scroll movement
+    const xRange = useTransform(scrollYProgress, [0, 1], ["0%", "-70%"]);
+    const x = useSpring(xRange, { stiffness: 100, damping: 30, restDelta: 0.001 });
 
     return (
-        <section className="relative mx-auto max-w-7xl px-6 lg:px-8 font-figtree overflow-hidden">
+        <section ref={targetRef} className="relative h-[400vh] font-figtree">
+            <div className="sticky top-0 flex h-screen items-center overflow-hidden bg-white dark:bg-[#050505]">
 
-            {/* Header with Offset Typography */}
-            <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-20 lg:mb-32 relative z-10 gap-8">
-                <div className="max-w-2xl">
-                    <div className="flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-500/20 bg-indigo-500/5 w-fit mb-6">
-                        <Sparkles className="w-3 h-3 text-indigo-600" />
-                        <span className="text-[10px] font-black uppercase tracking-[0.2em] text-indigo-600">
-                            Curated Works
-                        </span>
-                    </div>
-                    <h2 className="text-6xl lg:text-8xl font-bold text-foreground tracking-tighter leading-[0.85]">
-                        Visual <br />
-                        <span className="font-instrument-serif italic font-normal text-indigo-600 dark:text-indigo-400">Excellence.</span>
-                    </h2>
-                </div>
-                <p className="text-muted-foreground text-lg max-w-xs border-l border-border pl-6 leading-relaxed">
-                    Transforming complex business logic into seamless, high-end digital interfaces.
-                </p>
-            </div>
-
-            {/* The "Beautiful" Project Grid */}
-            <div className="relative z-10 flex flex-col gap-24 lg:gap-40">
-                {displayedProjects.map((project, index) => (
+                {/* Modern Floating Header - Solves Overlap */}
+                <div className="absolute top-0 left-0 w-full z-30 px-6 lg:px-12 pt-16 pb-32 bg-gradient-to-b from-white via-white/80 dark:from-[#050505] dark:via-[#050505]/80 to-transparent pointer-events-none">
                     <motion.div
-                        key={project.id || index}
-                        initial={{ opacity: 0, y: 50 }}
+                        initial={{ opacity: 0, y: -20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        className="group relative"
+                        className="flex flex-col md:flex-row md:items-end justify-between gap-6"
                     >
-                        {/* Project Number (Floating Aesthetic) */}
-                        <div className="hidden lg:block absolute -left-16 top-0 text-sm font-black text-indigo-600/20 tracking-widest [writing-mode:vertical-lr] rotate-180">
-                            PROJECT — 0{index + 1}
-                        </div>
-
-                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-
-                            {/* Visual Asset (7 Columns) */}
-                            <div className="lg:col-span-7 relative order-1 group-hover:px-4 transition-all duration-700">
-                                <div className="relative aspect-[16/10] overflow-hidden rounded-[3rem] border-[12px] border-card bg-card shadow-2xl">
-                                    <Image
-                                        src={project.thumbnail}
-                                        alt={project.name}
-                                        fill
-                                        className="object-cover transition-transform duration-1000 group-hover:scale-110"
-                                    />
-                                    {/* Interaction Overlay */}
-                                    <div className="absolute inset-0 bg-indigo-950/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center backdrop-blur-[2px]">
-                                        <div className="h-20 w-20 rounded-full bg-white text-black flex items-center justify-center scale-0 group-hover:scale-100 transition-transform duration-500 font-bold text-sm tracking-tighter uppercase shadow-2xl">
-                                            View
-                                        </div>
-                                    </div>
-                                </div>
+                        <div>
+                            <div className="flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-500/20 bg-indigo-500/5 w-fit mb-4">
+                                <Sparkles className="w-3 h-3 text-indigo-600" />
+                                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-indigo-600">
+                                    Digital Craft
+                                </span>
                             </div>
-
-                            {/* Content Block (5 Columns) */}
-                            <div className="lg:col-span-5 order-2 space-y-8">
-                                <div className="space-y-4">
-                                    <div className="flex items-center gap-3">
-                                        <div className="h-10 w-10 rounded-xl bg-card border border-border flex items-center justify-center shadow-sm">
-                                            <Image src={project.icon} alt="" width={24} height={24} />
-                                        </div>
-                                        <div className="h-[1px] w-12 bg-border" />
-                                        <span className="text-[10px] font-black uppercase tracking-widest text-muted-foreground/60">
-                                            {project.category[0]}
-                                        </span>
-                                    </div>
-
-                                    <h3 className="text-4xl lg:text-6xl font-bold text-foreground tracking-tighter leading-none">
-                                        {project.subject}
-                                    </h3>
-
-                                    <p className="text-muted-foreground text-lg leading-relaxed font-medium line-clamp-3">
-                                        {project.shortDes}
-                                    </p>
-                                </div>
-
-                                {/* Modern Action Link */}
-                                <Link
-                                    href={`/projects/${project.id}`}
-                                    className="inline-flex items-center gap-4 group/link"
-                                >
-                                    <div className="h-14 w-14 rounded-full border border-border flex items-center justify-center group-hover/link:bg-foreground group-hover/link:text-background transition-all duration-500">
-                                        <ArrowUpRight size={24} />
-                                    </div>
-                                    <div className="flex flex-col">
-                                        <span className="text-sm font-black uppercase tracking-widest text-foreground">Explore Case Study</span>
-                                        <span className="text-[10px] text-muted-foreground font-bold uppercase tracking-tight">Full Project Breakdown</span>
-                                    </div>
-                                </Link>
-                            </div>
+                            <h2 className="text-5xl lg:text-8xl font-bold tracking-tighter text-foreground leading-[0.8]">
+                                The <span className="font-instrument-serif italic font-normal text-indigo-600">Showcase.</span>
+                            </h2>
                         </div>
+                        <p className="text-xs font-black uppercase tracking-[0.4em] text-muted-foreground hidden md:block">
+                            Scroll to navigate — 01 // 0{displayedProjects.length}
+                        </p>
                     </motion.div>
-                ))}
-            </div>
-
-            {/* Luxury Footer Archive Link */}
-            {isHome && (
-                <div className="mt-32 flex justify-center">
-                    <Link
-                        href="/projects"
-                        className="relative px-12 py-6 group overflow-hidden rounded-2xl bg-card border border-border shadow-sm"
-                    >
-                        <div className="absolute inset-0 bg-indigo-600 translate-y-[101%] group-hover:translate-y-0 transition-transform duration-500" />
-                        <div className="relative flex items-center gap-4 text-foreground group-hover:text-white transition-colors duration-500 font-black uppercase tracking-widest text-sm">
-                            <Layers size={18} />
-                            View Full Archive
-                            <MoveRight size={18} className="transition-transform group-hover:translate-x-2" />
-                        </div>
-                    </Link>
                 </div>
-            )}
+
+                {/* The Horizontal Moving Track */}
+                <motion.div style={{ x }} className="flex gap-16 lg:gap-32 pl-[5%] lg:pl-[10%] items-center pt-24">
+                    {displayedProjects.map((project, index) => (
+                        <ProjectCard key={project.id || index} project={project} index={index} />
+                    ))}
+
+                    {/* Final Archive Slide */}
+                    {isHome && (
+                        <div className="flex h-[50vh] items-center justify-center pr-32 lg:pr-64">
+                            <Link href="/projects" className="group flex flex-col items-center gap-8">
+                                <div className="relative h-40 w-40 rounded-full border border-indigo-500/20 flex items-center justify-center group-hover:border-indigo-600 transition-all duration-700">
+                                    <div className="absolute inset-0 rounded-full border border-indigo-600 scale-0 group-hover:scale-100 opacity-0 group-hover:opacity-10 transition-all duration-700" />
+                                    <MoveRight size={48} className="text-indigo-600 group-hover:translate-x-4 transition-transform duration-500" />
+                                </div>
+                                <span className="text-[10px] font-black uppercase tracking-[0.5em] text-muted-foreground group-hover:text-foreground transition-colors">
+                                    Explore Full Archive
+                                </span>
+                            </Link>
+                        </div>
+                    )}
+                </motion.div>
+            </div>
         </section>
+    );
+}
+
+function ProjectCard({ project, index }) {
+    return (
+        <motion.div
+            whileHover={{ y: -10 }}
+            className="group relative h-[50vh] w-[85vw] md:w-[65vw] lg:w-[50vw] flex-shrink-0"
+        >
+            {/* Project Frame */}
+            <Link
+                href={`/projects/${project.id}`}
+                className="block relative h-full w-full overflow-hidden rounded-[3rem] lg:rounded-[4.5rem] bg-neutral-100 dark:bg-neutral-900 shadow-[0_0_50px_-12px_rgba(0,0,0,0.12)] group-hover:shadow-indigo-500/10 transition-all duration-700"
+            >
+                <Image
+                    src={project.thumbnail}
+                    alt={project.subject}
+                    fill
+                    className="object-cover transition-all duration-1000 group-hover:scale-110 grayscale-[0.2] group-hover:grayscale-0"
+                />
+
+                {/* Floating Meta Label */}
+                <div className="absolute top-8 left-8 flex items-center gap-3">
+                    <div className="h-10 w-10 rounded-xl bg-white/90 dark:bg-black/90 backdrop-blur-md flex items-center justify-center shadow-lg">
+                        <Image src={project.icon} alt="" width={20} height={20} className="object-contain" />
+                    </div>
+                    <span className="px-4 py-2 rounded-full bg-white/90 dark:bg-black/90 backdrop-blur-md text-[10px] font-black uppercase tracking-widest text-foreground shadow-lg">
+                        {project.category[0]}
+                    </span>
+                </div>
+
+                {/* Bottom Title Bar (Visible on Hover) */}
+                <div className="absolute inset-x-0 bottom-0 p-8 lg:p-12 translate-y-full group-hover:translate-y-0 transition-transform duration-700 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+                    <div className="flex justify-between items-end">
+                        <div className="max-w-md">
+                            <h3 className="text-3xl lg:text-5xl font-bold text-white tracking-tighter mb-4">
+                                {project.subject}
+                            </h3>
+                            <p className="text-white/70 text-sm font-medium line-clamp-2">
+                                {project.shortDes}
+                            </p>
+                        </div>
+                        <div className="h-16 w-16 rounded-full bg-white text-black flex items-center justify-center shadow-2xl">
+                            <ArrowUpRight size={28} />
+                        </div>
+                    </div>
+                </div>
+            </Link>
+
+            {/* Vertical Index Number */}
+            <div className="absolute -right-8 top-1/2 -translate-y-1/2 text-9xl font-black text-gray-950/[0.03] dark:text-white/[0.03] pointer-events-none select-none">
+                0{index + 1}
+            </div>
+        </motion.div>
     );
 }
