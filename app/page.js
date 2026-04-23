@@ -11,9 +11,7 @@ export default function Home() {
       <Hero />
       <AboutMe />
       <Work />
-      <div className="mt-24">
-        <ContactMe />
-      </div>
+      <ContactMe />
       <CTA />
     </div>
   );
